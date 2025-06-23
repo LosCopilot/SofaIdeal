@@ -31,12 +31,19 @@
         
         .nav-link {
             color: rgba(255, 255, 255, 0.85) !important;
+            transition: all 0.3s ease;
+         }
+
+        .nav-link:hover,
+        .nav-link.active {
+             color: #ffffff !important;
+             text-decoration: underline;
+         }
+
+        .dropdown-menu {
+            font-size: 0.95rem;
         }
-        
-        .nav-link:hover {
-            color: white !important;
-        }
-        
+
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero-bg.jpg');
             background-size: cover;
@@ -189,52 +196,56 @@
 <body>
     <form id="form1" runat="server">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background-color: #2A5C8B;">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <i class="fas fa-couch me-2"></i>Sofá Ideal
+                <a class="navbar-brand fw-bold" href="#">
+                  <i class="fas fa-couch me-2"></i> Sofá Ideal
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                   <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#products">Catálogo</a>
-                        </li>
-                        <!-- UPDATED: Added anchor link to about section -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about-section">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user me-1"></i>Mi Cuenta
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item" href="#">Registrarse</a></li>
-                                <li><hr class="dropdown-divider"/></li>
-                                <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item position-relative">
-                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span id="cartBadge" runat="server" class="badge bg-danger cart-badge">0</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                   <!-- Secciones principales -->
+                   <ul class="navbar-nav me-auto">
+                     <li class="nav-item">
+                       <a class="nav-link active" href="#">Inicio</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="#products">Catálogo</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="#about-section">Nosotros</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" href="#contact-section">Contacto</a>
+                     </li>
+                 </ul> 
+
+
+            <!-- Mi Cuenta y Carrito -->
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+        <i class="fas fa-user me-1"></i>Mi Cuenta
+    </a>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a></li>
+        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</a></li>
+        <li><hr class="dropdown-divider"/></li>
+        <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
+    </ul>
+</li>
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartBadge" runat="server" class="badge bg-danger cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
         <!-- Hero Section -->
         <section class="hero-section text-center">
@@ -251,7 +262,7 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-12 text-center">
-                        <img src="images/logo-large.png" alt="Sofá Ideal" class="about-logo">
+                        <img src="Logo (2).png" alt="Sofá Ideal" class="about-logo">
                         <h2 class="section-title">Nuestra Empresa</h2>
                     </div>
                 </div>
@@ -303,7 +314,7 @@
                     <!-- Gallery Images -->
                     <div class="col-md-4 mb-4">
                         <div class="gallery-item">
-                            <img src="images/about/factory.jpg" alt="Nuestras Instalaciones">
+                            <img src="taller de produccion .png" alt="Nuestras Instalaciones">
                             <div class="gallery-caption">
                                 <h5>Taller de Producción</h5>
                                 <p class="mb-0">Espacio donde creamos cada pieza con dedicación</p>
@@ -313,7 +324,7 @@
                     
                     <div class="col-md-4 mb-4">
                         <div class="gallery-item">
-                            <img src="images/about/team.jpg" alt="Nuestro Equipo">
+                            <img src="Equipo Especializado.png" alt="Nuestro Equipo">
                             <div class="gallery-caption">
                                 <h5>Equipo Especializado</h5>
                                 <p class="mb-0">Artisans con más de 10 años de experiencia</p>
@@ -323,7 +334,7 @@
                     
                     <div class="col-md-4 mb-4">
                         <div class="gallery-item">
-                            <img src="images/about/materials.jpg" alt="Materiales">
+                            <img src="Materiales 1.jpg" alt="Materiales">
                             <div class="gallery-caption">
                                 <h5>Materiales Premium</h5>
                                 <p class="mb-0">Selección de telas y materiales de primera calidad</p>
@@ -333,7 +344,7 @@
                     
                     <div class="col-md-6 mb-4">
                         <div class="gallery-item">
-                            <img src="images/about/design.jpg" alt="Diseño">
+                            <img src="Proceso de Diseño.png" alt="Diseño">
                             <div class="gallery-caption">
                                 <h5>Proceso de Diseño</h5>
                                 <p class="mb-0">Creación de prototipos y modelos exclusivos</p>
@@ -343,7 +354,7 @@
                     
                     <div class="col-md-6 mb-4">
                         <div class="gallery-item">
-                            <img src="images/about/showroom.jpg" alt="Showroom">
+                            <img src="Showroom Principal.jpg" alt="Showroom">
                             <div class="gallery-caption">
                                 <h5>Showroom Principal</h5>
                                 <p class="mb-0">Espacio donde puedes experimentar nuestros productos</p>
@@ -412,7 +423,7 @@
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="card category-card">
-                            <img src="images/category-1.jpg" class="card-img-top" alt="Sofás Clásicos"/>
+                            <img src="sofa clasico.jpg" class="card-img-top" alt="Sofás Clásicos"/>
                             <div class="card-body text-center">
                                 <h5 class="card-title">Clásicos</h5>
                                 <a href="#" class="btn btn-outline-primary">Ver más</a>
@@ -421,7 +432,7 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card category-card">
-                            <img src="images/category-2.jpg" class="card-img-top" alt="Sofás Modernos"/>
+                            <img src="Sofás Modernos.jpg" class="card-img-top" alt="Sofás Modernos"/>
                             <div class="card-body text-center">
                                 <h5 class="card-title">Modernos</h5>
                                 <a href="#" class="btn btn-outline-primary">Ver más</a>
@@ -430,7 +441,7 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card category-card">
-                            <img src="images/category-3.jpg" class="card-img-top" alt="Sofás Personalizados"/>
+                            <img src="Sofás Personalizados.jpg" class="card-img-top" alt="Sofás Personalizados"/>
                             <div class="card-body text-center">
                                 <h5 class="card-title">Personalizados</h5>
                                 <a href="#" class="btn btn-outline-primary">Ver más</a>
@@ -460,7 +471,7 @@
                             </div>
                             <div class="card-footer bg-white">
                                 <div class="d-flex align-items-center">
-                                    <img src="images/client-1.jpg" class="rounded-circle me-3" width="50" alt="Cliente"/>
+                                    <img src="4.png" class="rounded-circle me-3" width="50" alt="Cliente"/>
                                     <div>
                                         <h6 class="mb-0">María González</h6>
                                         <small class="text-muted">Lima</small>
@@ -483,7 +494,7 @@
                             </div>
                             <div class="card-footer bg-white">
                                 <div class="d-flex align-items-center">
-                                    <img src="images/client-2.jpg" class="rounded-circle me-3" width="50" alt="Cliente"/>
+                                    <img src="3.jpg" class="rounded-circle me-3" width="50" alt="Cliente"/>
                                     <div>
                                         <h6 class="mb-0">Carlos Mendoza</h6>
                                         <small class="text-muted">Arequipa</small>
@@ -506,7 +517,7 @@
                             </div>
                             <div class="card-footer bg-white">
                                 <div class="d-flex align-items-center">
-                                    <img src="images/client-3.jpg" class="rounded-circle me-3" width="50" alt="Cliente"/>
+                                    <img src="1 .png" class="rounded-circle me-3" width="50" alt="Cliente"/>
                                     <div>
                                         <h6 class="mb-0">Lucía Fernández</h6>
                                         <small class="text-muted">Trujillo</small>
@@ -520,7 +531,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" id="contact-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-4 mb-md-0">
