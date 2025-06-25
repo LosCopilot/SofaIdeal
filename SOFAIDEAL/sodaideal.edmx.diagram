@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e03da65ecfb4d2da197c2ab2fd57ef7" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="SofaIdealModel.Clientes" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SofaIdealModel.Compras" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SofaIdealModel.Facturas" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SofaIdealModel.Pedidos" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SofaIdealModel.Productos" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SofaIdealModel.Proveedores" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="SofaIdealModel.FK_Compras_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="SofaIdealModel.FK_Compras_Facturas" ManuallyRouted="false" />
+        <AssociationConnector Association="SofaIdealModel.FK_Compras_Pedidos" ManuallyRouted="false" />
+        <AssociationConnector Association="SofaIdealModel.FK_Compras_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="SofaIdealModel.FK_Productos_Proveedores" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

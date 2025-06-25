@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Computer\\Desktop\\SofaIdeal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|C:\\Users\\Computer\\Desktop\\SofaIdeal\\sofaideal\\webform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|c:\\users\\computer\\desktop\\sofaideal\\sofaideal\\webform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|solutionrelative:sofaideal\\webform.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|c:\\users\\computer\\desktop\\sofaideal\\sofaideal\\webform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|C:\\Users\\Computer\\Desktop\\SofaIdeal\\sofaideal\\webform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|solutionrelative:sofaideal\\webform.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|C:\\Users\\Computer\\Desktop\\SofaIdeal\\sofaideal\\sodaideal.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{10CC68AD-F361-47F8-ACE0-ED22BBDDB356}|SOFAIDEAL\\SOFAIDEAL.csproj|solutionrelative:sofaideal\\sodaideal.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +22,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sodaideal.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\Computer\\Desktop\\SofaIdeal\\SOFAIDEAL\\sodaideal.edmx",
+              "RelativeDocumentMoniker": "SOFAIDEAL\\sodaideal.edmx",
+              "ToolTip": "C:\\Users\\Computer\\Desktop\\SofaIdeal\\SOFAIDEAL\\sodaideal.edmx [Diagram1]",
+              "RelativeToolTip": "SOFAIDEAL\\sodaideal.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-06-24T06:04:09.595Z",
+              "EditorCaption": " [Diagram1]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,7 +44,7 @@
               "RelativeDocumentMoniker": "SOFAIDEAL\\WebForm.aspx.cs",
               "ToolTip": "C:\\Users\\Computer\\Desktop\\SofaIdeal\\SOFAIDEAL\\WebForm.aspx.cs",
               "RelativeToolTip": "SOFAIDEAL\\WebForm.aspx.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-18T00:55:04.287Z",
               "EditorCaption": ""

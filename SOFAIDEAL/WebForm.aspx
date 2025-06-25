@@ -224,18 +224,11 @@
 
 
             <!-- Mi Cuenta y Carrito -->
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-        <i class="fas fa-user me-1"></i>Mi Cuenta
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</a></li>
-        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</a></li>
-        <li><hr class="dropdown-divider"/></li>
-        <li><a class="dropdown-item" href="#">Mis Pedidos</a></li>
-    </ul>
-</li>
+                    <!-- Barra de Búsqueda -->
+    <li class="nav-item me-3">
+        <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Buscar productos..." />
+    </li>
+                    <!-- Mensaje de no resultados -->
                 <li class="nav-item position-relative">
                     <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cartModal">
                         <i class="fas fa-shopping-cart"></i>
@@ -692,5 +685,45 @@
             }
         });
     </script>
+ <script>
+     document.getElementById("searchInput").addEventListener("keyup", function () {
+         const searchTerm = this.value.toLowerCase().trim();
+
+         let foundResult = false;
+
+         // Filtrar productos
+         const productCards = document.querySelectorAll(".product-card");
+         productCards.forEach(card => {
+             const productName = card.querySelector(".card-title").textContent.toLowerCase();
+             if (productName.includes(searchTerm)) {
+                 card.closest('.col-md-4').style.display = "block";
+                 foundResult = true;
+             } else {
+                 card.closest('.col-md-4').style.display = "none";
+             }
+         });
+
+         // Filtrar categorías
+         const categoryCards = document.querySelectorAll(".category-card");
+         categoryCards.forEach(card => {
+             const categoryName = card.querySelector(".card-title").textContent.toLowerCase();
+             if (categoryName.includes(searchTerm)) {
+                 card.closest('.col-md-4').style.display = "block";
+                 foundResult = true;
+             } else {
+                 card.closest('.col-md-4').style.display = "none";
+             }
+         });
+
+         // Mostrar/Ocultar mensaje según si hay resultados
+         const noResults = document.getElementById("noResults");
+         if (searchTerm.length > 0 && !foundResult) {
+             noResults.classList.remove("d-none");
+         } else {
+             noResults.classList.add("d-none");
+         }
+     });
+    </script>
+
 </body>
 </html>
