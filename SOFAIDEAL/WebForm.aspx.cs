@@ -23,9 +23,9 @@ namespace SOFAIDEAL
             // Datos de ejemplo (en un caso real vendrían de una base de datos)
             var products = new List<dynamic>
             {
-                new { IDProducto = 1, NombreProducto = "Sofá Clásico", Precio = 1899.99m, Stock = 15, ImagenURL = "sofa1.jpg" },
-                new { IDProducto = 2, NombreProducto = "Sofá Moderno", Precio = 2199.99m, Stock = 8, ImagenURL = "sofa2.jpg" },
-                new { IDProducto = 3, NombreProducto = "Sofá Seccional", Precio = 3499.99m, Stock = 5, ImagenURL = "sofa3.jpg" }
+                new { IDProducto = 1, NombreProducto = "Sofá Clásico", Precio = 1899.99m, Stock = 15, ImagenURL = "Sofá Clásico.png" },
+                new { IDProducto = 2, NombreProducto = "Sofá Moderno", Precio = 2199.99m, Stock = 8, ImagenURL = "Sofá Moderno.png" },
+                new { IDProducto = 3, NombreProducto = "Sofá Seccional", Precio = 3499.99m, Stock = 5, ImagenURL = "Sofá Seccional.jpg" }
             };
 
             rptProducts.DataSource = products;

@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SofaIdealModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="DNI" />
+    </Key>
+    <Property Name="DNI" Type="int" Nullable="false" />
+    <Property Name="Nombres" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Telefono" Type="int" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="IDCompra" />
+    </Key>
+    <Property Name="IDCompra" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaCompra" Type="date" Nullable="false" />
+    <Property Name="DNI" Type="int" />
+    <Property Name="IDPedido" Type="int" />
+    <Property Name="IDFactura" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDProducto" Type="int" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Facturas">
+    <Key>
+      <PropertyRef Name="IDFactura" />
+    </Key>
+    <Property Name="IDFactura" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaEmision" Type="date" Nullable="false" />
+    <Property Name="MontoTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="IDPedido" />
+    </Key>
+    <Property Name="IDPedido" Type="int" Nullable="false" />
+    <Property Name="FechaPedido" Type="date" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="DescripcionPedido" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IDProducto" />
+    </Key>
+    <Property Name="IDProducto" Type="int" Nullable="false" />
+    <Property Name="NombreProducto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Stock" Type="int" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="IDProveedor" Type="int" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="IDProveedor" />
+    </Key>
+    <Property Name="IDProveedor" Type="int" Nullable="false" />
+    <Property Name="NombreProveedor" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Telefono" Type="int" />
+  </EntityType>
+  <Association Name="FK_Compras_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="DNI" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="DNI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_Facturas">
+    <End Role="Facturas" Type="Self.Facturas" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facturas">
+        <PropertyRef Name="IDFactura" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="IDFactura" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_Pedidos">
+    <End Role="Pedidos" Type="Self.Pedidos" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedidos">
+        <PropertyRef Name="IDPedido" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="IDPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compras_Productos">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IDProducto" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="IDProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Proveedores">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="IDProveedor" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IDProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SofaIdealModelStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Facturas" EntityType="Self.Facturas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedidos" EntityType="Self.Pedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Compras_Clientes" Association="Self.FK_Compras_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_Facturas" Association="Self.FK_Compras_Facturas">
+      <End Role="Facturas" EntitySet="Facturas" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_Pedidos" Association="Self.FK_Compras_Pedidos">
+      <End Role="Pedidos" EntitySet="Pedidos" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compras_Productos" Association="Self.FK_Compras_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Proveedores" Association="Self.FK_Productos_Proveedores">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
